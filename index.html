@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proposal to Dr. Kiapour | PhD Applicant — Laxmi Hulyalkar</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;0,700;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #faf8f5;
+      --ink: #1c1410;
+      --deep: #140e09;
+      --panel: #f2ede6;
+      --crimson: #8b1a1a;
+      --crimson-light: #b52a2a;
+      --bone: #c9a96e;
+      --bone-light: #dfc090;
+      --muted: #7a6e64;
+      --border: rgba(139,26,26,0.14);
+      --card: #ffffff;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--ink); overflow-x:hidden; }
+
+    body::after {
+      content:''; position:fixed; inset:0; pointer-events:none; z-index:999;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.02'/%3E%3C/svg%3E");
+    }
+
+    nav {
+      position:fixed; top:0; left:0; right:0; z-index:100;
+      background:rgba(250,248,245,0.92); backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--border);
+      padding:0 60px; display:flex; align-items:center; justify-content:space-between; height:62px;
+    }
+    .nav-logo { font-family:'EB Garamond',serif; font-size:1.15rem; color:var(--crimson); font-weight:700; }
+    .nav-links { display:flex; gap:28px; list-style:none; }
+    .nav-links a { color:var(--muted); text-decoration:none; font-size:0.76rem; font-weight:500; letter-spacing:0.09em; text-transform:uppercase; transition:color 0.2s; }
+    .nav-links a:hover { color:var(--crimson); }
+    .nav-cta { background:var(--crimson) !important; color:white !important; padding:7px 18px; border-radius:4px; font-weight:600 !important; }
+
+    .hero {
+      min-height:100vh; display:grid; grid-template-columns:1fr 1fr;
+      align-items:center; padding:100px 60px 80px; gap:60px; position:relative; overflow:hidden;
+    }
+    .hero-cross {
+      position:absolute; right:40%; top:15%; opacity:0.04;
+      font-family:'EB Garamond',serif; font-size:22rem; color:var(--crimson); line-height:1; pointer-events:none; user-select:none;
+    }
+    .hero-content { position:relative; z-index:2; animation:fadeUp 0.8s ease both; }
+    .hero-badge {
+      display:inline-flex; align-items:center; gap:8px;
+      background:rgba(139,26,26,0.07); border:1px solid rgba(139,26,26,0.22);
+      color:var(--crimson); font-size:0.72rem; font-weight:600;
+      letter-spacing:0.1em; text-transform:uppercase; padding:6px 14px;
+      border-radius:100px; margin-bottom:28px;
+    }
+    .hero-badge::before { content:''; width:5px; height:5px; background:var(--crimson); border-radius:50%; }
+    .hero h1 { font-family:'EB Garamond',serif; font-size:clamp(2.4rem,4vw,3.8rem); line-height:1.1; margin-bottom:20px; color:var(--deep); font-weight:700; }
+    .hero h1 em { font-style:italic; color:var(--crimson); }
+    .hero-sub { font-size:0.93rem; color:var(--muted); line-height:1.8; max-width:500px; margin-bottom:36px; font-weight:300; }
+    .hero-stats { display:flex; gap:32px; margin-bottom:36px; flex-wrap:wrap; }
+    .stat { border-left:2px solid var(--bone); padding-left:14px; }
+    .stat-num { font-family:'EB Garamond',serif; font-size:1.9rem; color:var(--deep); line-height:1; font-weight:700; }
+    .stat-label { font-size:0.68rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.07em; margin-top:4px; }
+    .hero-actions { display:flex; gap:14px; flex-wrap:wrap; }
+    .btn-primary { background:var(--crimson); color:white; padding:13px 26px; border-radius:6px; font-weight:600; font-size:0.87rem; text-decoration:none; transition:transform 0.2s,box-shadow 0.2s; display:inline-flex; align-items:center; gap:8px; }
+    .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(139,26,26,0.25); }
+    .btn-secondary { border:1px solid rgba(139,26,26,0.3); color:var(--crimson); padding:13px 26px; border-radius:6px; font-weight:500; font-size:0.87rem; text-decoration:none; transition:all 0.2s; }
+    .btn-secondary:hover { background:rgba(139,26,26,0.05); }
+
+    .hero-right { position:relative; z-index:2; animation:fadeUp 0.8s 0.15s ease both; }
+    .table-label { font-size:0.7rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--bone); margin-bottom:14px; }
+    .align-table { width:100%; border-collapse:collapse; background:var(--card); border-radius:12px; overflow:hidden; box-shadow:0 4px 24px rgba(28,20,16,0.08); border:1px solid var(--border); }
+    .align-table thead tr { background:var(--crimson); color:white; }
+    .align-table th { padding:13px 18px; font-size:0.72rem; font-weight:600; letter-spacing:0.07em; text-transform:uppercase; text-align:left; }
+    .align-table td { padding:11px 18px; font-size:0.79rem; line-height:1.55; border-bottom:1px solid rgba(139,26,26,0.07); color:var(--ink); vertical-align:top; }
+    .align-table tr:last-child td { border-bottom:none; }
+    .align-table tr:nth-child(even) td { background:rgba(139,26,26,0.03); }
+    .align-table td:first-child { font-weight:600; color:var(--crimson); width:40%; }
+
+    section { padding:96px 60px; position:relative; z-index:1; }
+    .section-label { font-size:0.7rem; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--bone); margin-bottom:10px; }
+    .section-title { font-family:'EB Garamond',serif; font-size:clamp(1.8rem,2.8vw,2.4rem); margin-bottom:14px; line-height:1.2; color:var(--deep); font-weight:700; }
+    .section-desc { color:var(--muted); font-size:0.92rem; max-width:560px; line-height:1.75; margin-bottom:48px; }
+    .divider { border:none; height:1px; background:linear-gradient(90deg,transparent,var(--border),transparent); margin:0 60px; }
+    .bg-panel { background:var(--panel); }
+
+    .about-grid { display:grid; grid-template-columns:1.1fr 1fr; gap:60px; align-items:start; }
+    .about-text p { color:#3a3028; font-size:0.94rem; line-height:1.8; margin-bottom:16px; }
+    .about-text strong { color:var(--deep); }
+    .skills-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+    .skill-chip { background:var(--card); border:1px solid var(--border); border-radius:6px; padding:9px 13px; font-size:0.75rem; color:#3a3028; font-weight:500; transition:all 0.2s; }
+    .skill-chip:hover { border-color:var(--crimson); background:rgba(139,26,26,0.04); }
+
+    .card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:26px 30px; margin-bottom:18px; transition:all 0.25s; box-shadow:0 2px 10px rgba(28,20,16,0.04); position:relative; overflow:hidden; }
+    .card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--crimson),transparent); opacity:0; transition:opacity 0.25s; }
+    .card:hover { border-color:rgba(139,26,26,0.3); transform:translateY(-3px); box-shadow:0 12px 32px rgba(139,26,26,0.1); }
+    .card:hover::before { opacity:1; }
+    .card h3 { font-family:'EB Garamond',serif; font-size:1.15rem; margin-bottom:12px; color:var(--deep); font-weight:700; }
+    .card ul { list-style:none; padding:0; }
+    .card ul li { padding:5px 0 5px 18px; color:#3a3028; font-size:0.85rem; line-height:1.65; position:relative; }
+    .card ul li::before { content:'›'; position:absolute; left:0; color:var(--crimson); font-size:1rem; font-weight:700; }
+    .card-meta { font-size:0.72rem; color:var(--muted); letter-spacing:0.07em; text-transform:uppercase; margin-bottom:12px; }
+    .tag { display:inline-block; background:rgba(139,26,26,0.07); border:1px solid rgba(139,26,26,0.2); color:var(--crimson); font-size:0.67rem; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; padding:3px 9px; border-radius:100px; margin:3px 3px 3px 0; }
+    .tag-bone { background:rgba(201,169,110,0.1); border-color:rgba(201,169,110,0.3); color:#8a6820; }
+
+    .two-col { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+    .three-col { display:grid; grid-template-columns:1fr 1fr 1fr; gap:18px; }
+
+    .timeline { position:relative; padding-left:30px; }
+    .timeline::before { content:''; position:absolute; left:0; top:0; bottom:0; width:1px; background:linear-gradient(180deg,var(--crimson),transparent); }
+    .timeline-item { position:relative; margin-bottom:40px; }
+    .timeline-item::before { content:''; position:absolute; left:-36px; top:8px; width:10px; height:10px; background:var(--crimson); border-radius:50%; box-shadow:0 0 0 3px rgba(139,26,26,0.15); }
+    .timeline-header { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:8px; margin-bottom:6px; }
+    .timeline-role { font-family:'EB Garamond',serif; font-size:1.15rem; color:var(--deep); font-weight:700; }
+    .timeline-period { font-size:0.72rem; color:var(--muted); background:rgba(139,26,26,0.07); padding:4px 10px; border-radius:100px; }
+    .timeline-org { font-size:0.8rem; color:var(--crimson); font-weight:600; margin-bottom:12px; }
+
+    /* HIGHLIGHT BOX */
+    .highlight-box { background:linear-gradient(135deg,rgba(139,26,26,0.06),rgba(201,169,110,0.05)); border:1px solid rgba(139,26,26,0.2); border-radius:12px; padding:30px; margin-top:22px; position:relative; }
+    .highlight-box::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--crimson),var(--bone)); border-radius:12px 12px 0 0; }
+    .highlight-box h3 { font-family:'EB Garamond',serif; font-size:1.15rem; color:var(--crimson); margin-bottom:10px; font-weight:700; }
+    .highlight-box p { color:#3a3028; font-size:0.87rem; line-height:1.72; }
+    .highlight-stats { display:flex; gap:32px; margin-top:18px; flex-wrap:wrap; }
+    .h-stat { text-align:center; }
+    .h-stat-num { font-family:'EB Garamond',serif; font-size:1.6rem; color:var(--bone); font-weight:700; }
+    .h-stat-label { font-size:0.67rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.06em; }
+
+    .research-card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:34px; box-shadow:0 2px 14px rgba(28,20,16,0.05); }
+    .research-title { font-family:'EB Garamond',serif; font-size:1.25rem; color:var(--deep); margin-bottom:10px; line-height:1.4; font-weight:700; }
+    .research-authors { font-size:0.8rem; color:var(--muted); margin-bottom:18px; }
+    .research-authors strong { color:var(--crimson); }
+    .research-abstract { color:#3a3028; font-size:0.88rem; line-height:1.75; border-top:1px solid var(--border); padding-top:18px; margin-top:18px; }
+
+    .fit-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .fit-item { display:flex; gap:14px; padding:18px 20px; background:var(--card); border:1px solid var(--border); border-radius:10px; transition:all 0.2s; box-shadow:0 2px 6px rgba(28,20,16,0.04); }
+    .fit-item:hover { border-color:rgba(139,26,26,0.3); transform:translateY(-2px); box-shadow:0 8px 24px rgba(139,26,26,0.09); }
+    .fit-icon { font-size:1.3rem; flex-shrink:0; margin-top:2px; }
+    .fit-item h4 { font-size:0.87rem; font-weight:600; margin-bottom:5px; color:var(--deep); }
+    .fit-item p { font-size:0.77rem; color:var(--muted); line-height:1.6; }
+
+    .awards-row { display:flex; gap:18px; flex-wrap:wrap; }
+    .award-card { flex:1; min-width:190px; background:var(--card); border:1px solid var(--border); border-radius:12px; padding:24px; text-align:center; transition:all 0.25s; box-shadow:0 2px 8px rgba(28,20,16,0.04); }
+    .award-card:hover { border-color:rgba(139,26,26,0.3); transform:translateY(-3px); }
+    .award-icon { font-size:1.8rem; margin-bottom:10px; }
+    .award-card h4 { font-family:'EB Garamond',serif; font-size:1rem; margin-bottom:8px; color:var(--deep); font-weight:700; }
+    .award-card p { font-size:0.77rem; color:var(--muted); line-height:1.6; }
+
+    #contact { background:var(--crimson); color:white; text-align:center; }
+    #contact .section-label { color:rgba(255,255,255,0.6); }
+    #contact .section-title { color:white; }
+    #contact .section-desc { color:rgba(255,255,255,0.7); margin:0 auto; }
+    .contact-link { display:inline-flex; align-items:center; gap:10px; border:1px solid rgba(255,255,255,0.3); color:white; text-decoration:none; padding:13px 26px; border-radius:8px; font-size:0.87rem; font-weight:500; transition:all 0.2s; margin-top:32px; }
+    .contact-link:hover { background:rgba(255,255,255,0.12); border-color:rgba(255,255,255,0.6); }
+
+    footer { background:var(--deep); padding:22px 60px; display:flex; justify-content:space-between; align-items:center; color:rgba(255,255,255,0.3); font-size:0.74rem; }
+
+    @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+    .reveal { opacity:0; transform:translateY(18px); transition:opacity 0.6s ease,transform 0.6s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+
+    @media(max-width:960px) {
+      nav { padding:0 20px; }
+      .nav-links { display:none; }
+      section { padding:70px 24px; }
+      .hero { grid-template-columns:1fr; padding:100px 24px 60px; gap:40px; }
+      .hero-cross { display:none; }
+      .about-grid,.two-col,.three-col,.fit-grid { grid-template-columns:1fr; }
+      footer { flex-direction:column; gap:8px; padding:20px 24px; text-align:center; }
+      .divider { margin:0 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Laxmi Hulyalkar · PhD Applicant</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#fea">FEA & Biomechanics</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#additive">3D Printing</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#fit">Lab Fit</a></li>
+    <li><a href="#contact" class="nav-cta">Connect</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-cross">✦</div>
+  <div class="hero-content">
+    <div class="hero-badge">Proposal to Dr. Kiapour · MGH Harvard Medical School</div>
+    <h1>PhD Applicant<br><em>Laxmi Hulyalkar</em></h1>
+    <p class="hero-sub">
+      R&D Engineer with hands-on FEA-driven biomechanics, ASME V&V 40 model validation,
+      3D printing of medical implants, and FDA regulatory experience — purpose-built to
+      contribute to Dr. Kiapour's spine biomechanics and additive manufacturing research.
+    </p>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">FEA</div><div class="stat-label">ANSYS Mech. + ASTM Testing</div></div>
+      <div class="stat"><div class="stat-num">V&V 40</div><div class="stat-label">ASME Committee Alignment</div></div>
+      <div class="stat"><div class="stat-num">n=34</div><div class="stat-label">Patient Samples Validated</div></div>
+      <div class="stat"><div class="stat-num">2×</div><div class="stat-label">FDA 510(k) Clearances</div></div>
+    </div>
+    <div class="hero-actions">
+      <a href="#fit" class="btn-primary">↓ See Lab Alignment</a>
+      <a href="https://linkedin.com/in/laxmidh" target="_blank" class="btn-secondary">🔗 LinkedIn</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="table-label">Research Alignment — Dr. Kiapour's Lab vs. My Experience</div>
+    <table class="align-table">
+      <thead><tr><th>Dr. Kiapour's Research Area</th><th>My Relevant Experience</th></tr></thead>
+      <tbody>
+        <tr><td>Finite Element Analysis of orthopaedic implants</td><td>ANSYS Mechanical FEA for four-point bending, torque, and structural analysis corroborated by ASTM-aligned physical testing</td></tr>
+        <tr><td>3D printing / additive manufacturing of implants</td><td>SLA & DLP 3D printing of patient-specific craniofacial prosthetics; fabrication-to-validation workflow executed</td></tr>
+        <tr><td>ASME V&V 40 computational modeling</td><td>Led ASME V&V 40 credibility assessments and authored verification evidence for FDA Pre-Submission</td></tr>
+        <tr><td>Cadaveric biomechanics testing</td><td>Cadaver lab work at KLS Martin Group for surgical instrument design validation in anatomical conditions</td></tr>
+        <tr><td>FDA regulatory science & device clearance</td><td>Technical SME in FDA Pre-Sub teleconference; two end-to-end 510(k) clearances managed</td></tr>
+        <tr><td>Patient-specific implant design & validation</td><td>ICP-based algorithmic anatomical fit validation (n=34, p>0.05) with 3D printed patient-specific devices</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="about">
+  <div class="section-label">Background</div>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <h2 class="section-title">FEA, Additive Manufacturing<br><em>&amp; Regulatory Science</em></h2>
+      <p>I'm a Biomedical/Mechanical Engineer at <strong>KLS Martin Group</strong> where I use <strong>ANSYS Mechanical FEA</strong> to simulate four-point bending, torque, and structural behavior of surgical implants — corroborated by physical testing to ASTM standards. All simulation work is governed by the <strong>ASME V&V 40</strong> framework, the same standard Dr. Kiapour serves on as an active committee member.</p>
+      <p>At the <strong>Arany Lab (SUNY Buffalo)</strong>, I fabricated patient-specific prosthetics using <strong>SLA and DLP 3D printing</strong> and developed an ICP-based computational pipeline to validate anatomical fit across 34 patient samples. This fabrication-to-validation workflow — 3D printing → computational fit validation → statistical verification — directly mirrors Dr. Kiapour's work on 3D-printed implant biomechanics optimization.</p>
+      <p>Dr. Kiapour is the <strong>Director of Biomechanics Research at MGH / Harvard Medical School</strong>, with 20+ years of spine and orthopaedic biomechanics research, active ASME V&V 40 committee membership, and a focus on computational design optimization for 3D-printed orthopaedic implants. My background is a direct match.</p>
+    </div>
+    <div class="reveal" style="transition-delay:0.12s">
+      <div class="skills-grid">
+        <div class="skill-chip">ANSYS Mechanical / FEA</div>
+        <div class="skill-chip">4-Point Bending (ASTM F382)</div>
+        <div class="skill-chip">Torque Testing (ASTM F543)</div>
+        <div class="skill-chip">Screw Pull-Out Testing</div>
+        <div class="skill-chip">ASME V&V 40</div>
+        <div class="skill-chip">SLA / DLP 3D Printing</div>
+        <div class="skill-chip">ICP Algorithm</div>
+        <div class="skill-chip">3D Anatomical Modeling</div>
+        <div class="skill-chip">Mesh Optimization</div>
+        <div class="skill-chip">FDA Pre-Sub & 510(k)</div>
+        <div class="skill-chip">ISO 13485 / 14971</div>
+        <div class="skill-chip">FMEA / CAPA</div>
+        <div class="skill-chip">Cadaveric Testing</div>
+        <div class="skill-chip">SolidWorks / GD&T</div>
+        <div class="skill-chip">MATLAB</div>
+        <div class="skill-chip">Lean Six Sigma (GB)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="fea" class="bg-panel">
+  <div class="section-label">Core Technical Capability</div>
+  <h2 class="section-title reveal">FEA & Biomechanical Testing</h2>
+  <p class="section-desc reveal">ANSYS Mechanical simulations corroborated by ASTM-aligned physical testing — the exact validation framework used to optimize orthopaedic implant biomechanics.</p>
+  <div class="three-col">
+    <div class="card reveal">
+      <div class="card-meta">ASTM F382 · F1264</div>
+      <h3>4-Point Bending Test</h3>
+      <p style="font-size:0.85rem;color:#3a3028;line-height:1.65;margin-bottom:12px">Evaluated implant flexural strength, stiffness, and fatigue behavior under cyclic loading conditions. FEA predicted stress concentrations and failure locations prior to physical testing.</p>
+      <span class="tag-bone tag">Flexural Strength</span><span class="tag">Fatigue</span>
+    </div>
+    <div class="card reveal" style="transition-delay:0.08s">
+      <div class="card-meta">ASTM F543</div>
+      <h3>Screw Pull-Out Testing</h3>
+      <p style="font-size:0.85rem;color:#3a3028;line-height:1.65;margin-bottom:12px">Assessed fixation stability and bone-implant interface strength in simulated trabecular bone environments — directly relevant to Dr. Kiapour's spine fixation research.</p>
+      <span class="tag-bone tag">Fixation Stability</span><span class="tag">Bone Interface</span>
+    </div>
+    <div class="card reveal" style="transition-delay:0.16s">
+      <div class="card-meta">ASTM F543</div>
+      <h3>Torque Testing</h3>
+      <p style="font-size:0.85rem;color:#3a3028;line-height:1.65;margin-bottom:12px">Measured insertion and failure torque for implant fastener systems. FEA torque predictions validated against experimental results to guide design optimization.</p>
+      <span class="tag-bone tag">Insertion Torque</span><span class="tag">Failure Analysis</span>
+    </div>
+  </div>
+  <div class="card reveal" style="margin-top:6px">
+    <div class="card-meta">ANSYS Mechanical — Simulation-Driven Design Optimization</div>
+    <h3>FEA Corroborated by Physical Testing — ASME V&V 40 Framework</h3>
+    <ul>
+      <li>Developed ANSYS Mechanical FEA models for bending, torque, and structural simulations to predict stress concentrations, failure locations, and load-displacement behavior before physical testing</li>
+      <li>Validated computational predictions against experimental results, achieving strong correlation to support design verification decisions — reducing physical prototype iterations</li>
+      <li>Applied ASME V&V 40 model credibility documentation for FDA-facing submissions — the same standard Dr. Kiapour serves on as an active committee member at ASME</li>
+      <li>Direct translatable to Dr. Kiapour's work using FEA to optimize biomechanics of 3D-printed spine and orthopaedic implants</li>
+    </ul>
+    <div style="margin-top:14px"><span class="tag">ANSYS Mechanical</span><span class="tag">ASME V&V 40</span><span class="tag-bone tag">Stress Analysis</span><span class="tag">Design Optimization</span></div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="experience">
+  <div class="section-label">Work History</div>
+  <h2 class="section-title reveal">Professional Experience</h2>
+  <p class="section-desc reveal">Three roles converging on the exact intersection of FEA, 3D printing, cadaveric testing, and FDA regulatory science that defines Dr. Kiapour's research at MGH.</p>
+  <div class="timeline reveal">
+    <div class="timeline-item">
+      <div class="timeline-header">
+        <div class="timeline-role">R&D Engineer I</div>
+        <div class="timeline-period">Jan 2025 – Present</div>
+      </div>
+      <div class="timeline-org">KLS Martin Group · Jacksonville, FL</div>
+      <div class="card" style="margin-bottom:0">
+        <ul>
+          <li>FEA-based mechanical testing simulations (four-point bending, torque) corroborated by ASTM physical testing — directly parallel to Dr. Kiapour's implant biomechanics FEA work</li>
+          <li>MRI safety simulations (ANSYS HFSS & Mechanical) — <strong>$350K cost savings</strong> via in-house simulation capability</li>
+          <li>Technical SME in FDA Pre-Submission teleconference; ASME V&V 40-aligned model credibility reports</li>
+          <li>Two FDA 510(k) clearances end-to-end for thoracic surgical instruments</li>
+          <li>55+ ECNs; 411 complaint root cause analyses; CAPA documentation per ISO 14971</li>
+          <li>Cadaver lab testing for surgical instrument design validation</li>
+          <li><strong>Star Employee Award 2025</strong></li>
+        </ul>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-header">
+        <div class="timeline-role">Research Assistant</div>
+        <div class="timeline-period">Jan 2024 – Dec 2024</div>
+      </div>
+      <div class="timeline-org">The Arany Lab · SUNY Buffalo</div>
+      <div class="card" style="margin-bottom:0">
+        <ul>
+          <li>Fabricated patient-specific craniofacial prosthetics using SLA and DLP 3D printing — same additive manufacturing methods Dr. Kiapour uses for orthopaedic implant fabrication</li>
+          <li>ICP algorithm for automated anatomical alignment and fit validation (n=34, p&gt;0.05)</li>
+          <li>Mesh generation and optimization from medical imaging for computational models</li>
+          <li>Co-authored peer-reviewed manuscript; ad hoc peer reviewer for PeerJ (2025)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-header">
+        <div class="timeline-role">Mechanical Design Engineer</div>
+        <div class="timeline-period">Feb 2022 – Apr 2023</div>
+      </div>
+      <div class="timeline-org">Larsen & Toubro Technology Services · India</div>
+      <div class="card" style="margin-bottom:0">
+        <ul>
+          <li>Designed 150+ polymer and metal components applying ASME GD&T standards</li>
+          <li>Managed BOMs (450+ components) using Windchill PLM for traceability and revision control</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="additive" class="bg-panel">
+  <div class="section-label">Additive Manufacturing & Patient-Specific Design</div>
+  <h2 class="section-title reveal">3D Printing & Computational Validation</h2>
+  <p class="section-desc reveal">End-to-end patient-specific workflow: medical imaging → mesh optimization → SLA/DLP fabrication → ICP-based fit validation — directly applicable to Dr. Kiapour's 3D-printed implant research.</p>
+  <div class="two-col">
+    <div class="card reveal">
+      <div class="card-meta">Arany Lab, SUNY Buffalo</div>
+      <h3>SLA & DLP 3D Printing</h3>
+      <ul>
+        <li>Fabricated patient-specific craniofacial prosthetics using Stereolithography (SLA) and Digital Light Processing (DLP) 3D printing</li>
+        <li>Managed print parameter optimization for geometric accuracy, surface finish, and mechanical performance</li>
+        <li>FEA demonstrated <strong>improved flexural strength</strong> in 3D-printed devices vs. traditional fabrication — published in peer-reviewed manuscript</li>
+        <li>Same additive manufacturing process chain used in Dr. Kiapour's spine implant fabrication and biomechanics optimization research</li>
+      </ul>
+      <div style="margin-top:14px"><span class="tag">SLA</span><span class="tag">DLP</span><span class="tag-bone tag">Patient-Specific</span><span class="tag">FEA Validated</span></div>
+    </div>
+    <div class="card reveal" style="transition-delay:0.1s">
+      <div class="card-meta">FDA Regulatory — Design Validation</div>
+      <h3>Medical Device Regulatory Experience</h3>
+      <ul>
+        <li>FDA Pre-Sub technical SME — addressing reviewer questions on simulation methodology for medical device computational models</li>
+        <li>Two 510(k) clearances — owned full engineering documentation, DV&V, sterilization compliance</li>
+        <li>Design control expertise (ISO 13485) directly applicable to Dr. Kiapour's FDA-cleared device development work</li>
+        <li>Member-aligned with ASME V&V 40 committee — understanding the standard Dr. Kiapour actively helps shape</li>
+      </ul>
+      <div style="margin-top:14px"><span class="tag">FDA Pre-Sub</span><span class="tag">510(k)</span><span class="tag-bone tag">ASME V&V 40</span></div>
+    </div>
+  </div>
+  <div class="highlight-box reveal">
+    <h3>⚡ ICP Algorithm — Patient-Specific Fit Validation</h3>
+    <p>Implemented Iterative Closest Point (ICP) algorithm to automate anatomical alignment and quantify device fit accuracy against patient anatomy — validated across 34 patient samples (p&gt;0.05). This computational validation methodology maps directly to Dr. Kiapour's research on optimizing 3D-printed implant biomechanics for patient-specific anatomical compatibility.</p>
+    <div class="highlight-stats">
+      <div class="h-stat"><div class="h-stat-num">n=34</div><div class="h-stat-label">Patient Samples</div></div>
+      <div class="h-stat"><div class="h-stat-num">p&gt;0.05</div><div class="h-stat-label">Statistically Validated</div></div>
+      <div class="h-stat"><div class="h-stat-num">ICP</div><div class="h-stat-label">Algorithm Implemented</div></div>
+      <div class="h-stat"><div class="h-stat-num">MGH</div><div class="h-stat-label">Direct Relevance</div></div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="research">
+  <div class="section-label">Publications & Research</div>
+  <h2 class="section-title reveal">Research & Publications</h2>
+  <p class="section-desc reveal">Peer-reviewed publication, active peer reviewer status, and a statistically validated patient-specific device workflow.</p>
+  <div class="research-card reveal">
+    <span class="tag" style="margin-bottom:14px;display:inline-block">Manuscript Under Review · 2025</span>
+    <div class="research-title">Reverse Engineering Developmental Defects: A Globally-Accessible Digital Approach for Nasoalveolar Molding in Neonatal Unilateral Cleft Lip and Palate</div>
+    <div class="research-authors">Genovesi, E.; Canallatos, J.; Atalla, D.; <strong>Hulyalkar, L.</strong>; Markiewicz, M.; Arany, P. — Conference poster presented, 2024</div>
+    <div class="research-abstract">Validated a fully digital workflow using open-source CAD and SLA/DLP 3D printing for neonatal patient-specific prosthetics. Surface accuracy assessment (n=34, p&gt;0.05) demonstrated no significant difference vs. traditional methods. FEA confirmed improved flexural strength in 3D-printed devices. Demonstrates the end-to-end computational design → fabrication → validation pipeline central to Dr. Kiapour's additive manufacturing and biomechanics research.</div>
+    <div style="margin-top:18px"><span class="tag">3D Printing</span><span class="tag">FEA Validation</span><span class="tag-bone tag">n=34 Validated</span><span class="tag">Patient-Specific</span></div>
+  </div>
+  <div class="card reveal" style="margin-top:18px">
+    <div class="card-meta">Peer Review Activity</div>
+    <h3>Ad hoc Peer Reviewer — PeerJ · 2025</h3>
+    <ul>
+      <li>Invited as peer reviewer for PeerJ — multidisciplinary open-access biomedical engineering journal</li>
+      <li>Aligns with Dr. Kiapour's own ad hoc reviewer activities for Spine, J. Biomechanics, and JOR</li>
+      <li>Ready to contribute to lab's publication pipeline from day one</li>
+    </ul>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="fit" class="bg-panel">
+  <div class="section-label">Why Dr. Kiapour's Lab</div>
+  <h2 class="section-title reveal">Lab Alignment</h2>
+  <p class="section-desc reveal">Dr. Kiapour's research uniquely combines FEA, 3D printing, cadaveric testing, and ASME V&V 40 — all four are pillars of my existing, deployed experience.</p>
+  <div class="fit-grid reveal">
+    <div class="fit-item"><div class="fit-icon">🦴</div><div><h4>FEA for Orthopaedic Implants</h4><p>ANSYS Mechanical FEA for bending, torque, and structural analysis — corroborated by ASTM-aligned physical testing. Same workflow Dr. Kiapour uses to eliminate need for extensive mechanical testing via FEA.</p></div></div>
+    <div class="fit-item"><div class="fit-icon">🖨️</div><div><h4>3D Printing of Medical Devices</h4><p>SLA/DLP fabrication of patient-specific prosthetics + FEA-confirmed mechanical improvement. Dr. Kiapour's team investigates 3D-printed implant biomechanics and mechanobiology — this is a direct overlap.</p></div></div>
+    <div class="fit-item"><div class="fit-icon">📐</div><div><h4>ASME V&V 40 — Shared Standard</h4><p>Dr. Kiapour is an active ASME V&V 40 committee member. I led V&V 40 compliance and authored credibility assessments for FDA submissions. We are operating in the same validation framework.</p></div></div>
+    <div class="fit-item"><div class="fit-icon">🔬</div><div><h4>Cadaveric Testing</h4><p>Hands-on cadaver lab work at KLS Martin Group for surgical instrument validation. Dr. Kiapour's lab conducts in vitro and cadaveric biomechanics testing — immediate contribution possible.</p></div></div>
+    <div class="fit-item"><div class="fit-icon">📋</div><div><h4>FDA Regulatory Depth</h4><p>Pre-Sub FDA teleconference as technical SME + two 510(k) clearances. Dr. Kiapour has FDA-cleared device credits including cervical plate systems using FEA-driven design — direct alignment.</p></div></div>
+    <div class="fit-item"><div class="fit-icon">📄</div><div><h4>Research Output Ready</h4><p>Published manuscript under review + PeerJ peer reviewer, mirroring Dr. Kiapour's own reviewer activities. Ready to contribute to MGH lab's research output from day one.</p></div></div>
+  </div>
+  <div class="card reveal" style="margin-top:26px">
+    <h3>How I Can Contribute to Dr. Kiapour's Lab from Day One</h3>
+    <ul>
+      <li>Build and validate ANSYS Mechanical FEA models for spine implant systems — predicting stress, subsidence risk, and fixation behavior under physiological loading conditions</li>
+      <li>Design and execute ASTM-compliant biomechanical tests (bending, pull-out, torque) with FEA corroboration to support FDA-cleared implant development</li>
+      <li>Apply SLA/DLP 3D printing pipeline + ICP fit validation to patient-specific spine implant design and anatomical compatibility assessment</li>
+      <li>Support ASME V&V 40 model credibility documentation for computational biomechanics publications and FDA regulatory submissions</li>
+      <li>Contribute to cadaveric biomechanics testing with design control and validation documentation expertise</li>
+    </ul>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="awards">
+  <div class="section-label">Recognition</div>
+  <h2 class="section-title reveal">Awards & Credentials</h2>
+  <div class="awards-row reveal">
+    <div class="award-card"><div class="award-icon">⭐</div><h4>Star Employee Award</h4><p>KLS Martin Group · 2025<br>Outstanding contributions across FEA simulation, 510(k) regulatory submissions, and cross-functional engineering.</p></div>
+    <div class="award-card"><div class="award-icon">📝</div><h4>Ad hoc Peer Reviewer</h4><p>PeerJ · 2025<br>Invited reviewer — mirrors Dr. Kiapour's own peer review activities for Spine and J. Biomechanics.</p></div>
+    <div class="award-card"><div class="award-icon">🎓</div><h4>Master's in Bioengineering</h4><p>SUNY Buffalo<br>Computational biomechanics, 3D printing, patient-specific device design and validation.</p></div>
+    <div class="award-card"><div class="award-icon">⚙️</div><h4>Lean Six Sigma Green Belt</h4><p>DMAIC / Kaizen / 5S<br>Applied quality engineering methodology across product development and sustaining workflows.</p></div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="contact">
+  <div class="section-label">Get In Touch</div>
+  <h2 class="section-title reveal">Let's Connect</h2>
+  <p class="section-desc reveal">I'd welcome the opportunity to speak with Dr. Kiapour about his current research directions at MGH and discuss how my FEA, 3D printing, ASME V&V 40, and FDA regulatory background can contribute to the lab.</p>
+  <a href="https://linkedin.com/in/laxmidh" target="_blank" class="contact-link reveal">🔗 Connect on LinkedIn — linkedin.com/in/laxmidh</a>
+</section>
+
+<footer>
+  <span>© 2026 Laxmi Hulyalkar — PhD Applicant, Dr. Kiapour's Lab · MGH / Harvard Medical School</span>
+  <span>Jacksonville, FL</span>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach((e,i) => { if(e.isIntersecting){ setTimeout(()=>e.target.classList.add('visible'),i*55); obs.unobserve(e.target); } });
+  },{threshold:0.08});
+  reveals.forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
